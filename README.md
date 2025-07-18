@@ -16,6 +16,8 @@ You control a small triangle navigating through rapidly rotating obstacles—you
 
 - Supported Platforms are **Unix based systems**, MacOS and Linux.
 
+---
+
 ## 🚀 Build & Run
 
 ### Build
@@ -32,6 +34,8 @@ make
 ```bash
 ./circles
 ```
+
+---
 
 ## 🎮 Gameplay & Controls
 
@@ -50,4 +54,4 @@ Use ← / → to rotate the triangle around the circle
 - **Medium** — balanced challenge
 - **Hard** — fast rotations and narrow gaps
 
----
+
