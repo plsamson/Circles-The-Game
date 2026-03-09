@@ -11,7 +11,6 @@ struct menu *menu_initialize(SDL_Renderer *renderer)
     menu->state = MENU_PLAY_FOCUS;
     menu->music = Mix_LoadMUS(MENU_MUSIC);
     menu->select_sound = Mix_LoadWAV(MENU_SELECT_SOUND);
-    menu->background = spritesheet_create(BACKGROUND_FILENAME, 1, 1, 1, renderer);
     menu->title = spritesheet_create(TITLE_FILENAME, 1, 1, 1, renderer);
     menu->play = spritesheet_create(PLAY_FILENAME, 1, 1, 1, renderer);
     menu->quit = spritesheet_create(QUIT_FILENAME, 1, 1, 1, renderer);
@@ -27,7 +26,7 @@ struct menu *menu_initialize(SDL_Renderer *renderer)
 
 int menu_alpha(bool chosen)
 {
-    return chosen ? 255 : 64;
+    return chosen ? 255 : 130;
 }
 
 void menu_run(struct menu *menu)
@@ -112,10 +111,8 @@ void menu_run(struct menu *menu)
 
 void menu_render(struct menu *menu)
 {
-    SDL_SetRenderDrawColor(menu->renderer, 0x00, 0x00, 0x00, 0x00);
+    SDL_SetRenderDrawColor(menu->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
     SDL_RenderClear(menu->renderer);
-    spritesheet_render(menu->background, BACKGROUND_X, BACKGROUND_Y,
-                       255, 0);
     spritesheet_render(menu->title, TITLE_X, TITLE_Y,
                        255, 0);
     spritesheet_render(menu->play, PLAY_X, PLAY_Y,
@@ -139,7 +136,6 @@ void menu_delete(struct menu *menu)
     {
         Mix_FreeMusic(menu->music);
         Mix_FreeChunk(menu->select_sound);
-        spritesheet_delete(menu->background);
         spritesheet_delete(menu->title);
         spritesheet_delete(menu->play);
         spritesheet_delete(menu->quit);

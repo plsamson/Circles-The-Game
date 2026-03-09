@@ -8,7 +8,6 @@
 // ---- Menu constants ----
 // ------------------------
 // Title/Background constants
-#define BACKGROUND_FILENAME "../assets/background-small.png"
 #define BACKGROUND_X 0
 #define BACKGROUND_Y 0
 #define TITLE_FILENAME "../assets/title-small.png"
